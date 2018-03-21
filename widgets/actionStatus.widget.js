@@ -47,7 +47,8 @@ class myWidget extends baseWidget() {
       style: {
         selected: {
           bg: 'green'
-        }
+        },
+        bg: 'red'
       },
       border: {
         type: 'line'
@@ -60,7 +61,7 @@ class myWidget extends baseWidget() {
         ch: '|'
       },
       align: 'left',
-      content: ''
+      content: '💃 🌹 🌻 Happy International Women Day: may you all be rad like the JessFraz! 🌈 😍'
     })
   }
 

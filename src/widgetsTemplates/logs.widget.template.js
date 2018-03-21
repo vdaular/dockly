@@ -28,7 +28,7 @@ class myWidget extends baseWidget() {
       vi: true,
       style: {
         fg: 'default',
-        bg: 'default',
+        bg: 'blue',
         border: {
           fg: 'default',
           bg: 'default'

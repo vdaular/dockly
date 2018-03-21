@@ -14,10 +14,11 @@ const CONTAINERS_GRID_LAYOUT = {
   'actionStatus': [6, 0, 1, 10],
   'containerInfo': [2, 2, 8, 8],
   'containerList': [0, 0, 6, 10],
-  'containerLogs': [7, 0, 4, 12],
-  'containerStatus': [0, 10, 2, 2],
-  'containerUtilization': [2, 10, 3, 2],
-  'containerVsImages': [5, 10, 2, 2],
+  'containerLogs': [7, 0, 4, 10],
+  'containerStatus': [4, 10, 2, 2],
+  'containerUtilization': [6, 10, 3, 2],
+  'containerVsImages': [9, 10, 2, 2],
+  'containerJessFrazz': [0, 10, 4, 2],
   'toolbar': [11, 0, 1, 12]
 }
 
@@ -174,7 +175,7 @@ class screen {
       }
 
       if (curr && curr.border) {
-        curr.style.border.fg = 'green'
+        curr.style.border.fg = 'magenta'
       }
 
       this.screen.render()

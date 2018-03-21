@@ -75,20 +75,22 @@ class myWidget extends baseWidget(EventEmitter) {
       data: null,
       tags: true,
       interactive: true,
+      fillCellBorders: 'magenta',
       border: 'line',
       hover: {
-        bg: 'blue'
+        bg: 'white'
       },
       style: {
         header: {
-          fg: 'blue',
+          fg: 'white',
           bold: true
         },
         cell: {
-          fg: 'magenta',
+          fg: 'white',
           selected: {
-            bg: 'blue'
-          }
+            bg: 'yellow'
+          },
+          bg: 'magenta'
         }
       },
       align: 'center'

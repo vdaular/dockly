@@ -86,7 +86,8 @@ class myWidget extends baseWidget() {
       style: {
         selected: {
           bg: 'green'
-        }
+        },
+        bg: 'red'
       },
       border: {
         type: 'line'
