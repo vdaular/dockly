@@ -3,13 +3,31 @@ name: CI
 on: [push, pull_request]
 
 jobs:
+  lint:
+    strategy:
+      matrix:
+        platform: [ubuntu-latest]
+        node: ['14']
+    name: lint
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+      - name: install dependencies
+        run: yarn install --frozen-lockfile --ignore-engines --ignore-scripts
+      - name: check lint
+        run: yarn lint
+
   build_docs:
     strategy:
       matrix:
         platform: [ubuntu-latest]
         node: ['14']
-    name: Node ${{ matrix.node }} (${{ matrix.platform }})
+    name: Build docs
     runs-on: ${{ matrix.platform }}
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -24,7 +42,7 @@ jobs:
           working-dir: docs
 
   release:
-    name: do semantic release
+    name: Semantic release
     runs-on: 'ubuntu-latest'
     needs: build_docs
     if: github.event_name == 'push' && github.ref == 'refs/heads/master'
